@@ -8,7 +8,7 @@ function ClubsList ({ data }) {
           <li key={ index }><Card club={ club } index={ index } /></li>
       ) }
     </ul>
-  );
+  )
 }
 
-export default ClubsList;
+export default ClubsList

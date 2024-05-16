@@ -5,7 +5,7 @@ function Card ({ club, index }) {
       <p>Abierto entre semana: { club.openOnWeekdays ? "Si" : "No" }</p>
       <p>Abierto el fin de semana: { club.openOnWeekend ? "Si" : "No" }</p>
     </article>
-  );
+  )
 }
 
-export default Card;
+export default Card

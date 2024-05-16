@@ -1,36 +1,30 @@
-import { useState } from "react";
-
 function FormNewClub ({ changeNewClub, addNewClub }) {
-  //no hace falta esta variable de estado
-  const [isChecked, setIsChecked] = useState(false);
 
-  const handleInput = (ev) => {
-    changeNewClub(ev.target.id, ev.target.value);
-  };
-
-  const handleCheckbox = () => {
-    setIsChecked(!isChecked);
-
-    changeNewClub(setIsChecked);
-  };
+  const handleChange = (ev) => {
+    // En lugar de usar el id, estamos aqui utilizando el atributo name con un operador ternario
+    const value = ev.target.name === "name" ? ev.target.value : ev.target.checked
+    // Aquí genero el objeto que contiene la información que quiero enviar a mi App
+    const object = { key: ev.target.name, value: value };
+    changeNewClub(object)
+  }
 
   const handleClick = (ev) => {
-    ev.preventDefault();
-    addNewClub();
-  };
+    ev.preventDefault()
+    addNewClub()
+  }
 
   return (
-    <form className="form">
+    <form className="form" onChange={ handleChange }>
       <legend>Añadir un nuevo club</legend>
       <label htmlFor="clubName">Nombre del club</label>
-      <input type="text" name="name" id="name" onChange={ handleInput } />
+      <input type="text" name="name" id="name" />
       <label htmlFor="openOnWeekdays">¿Abre entre semana?</label>
-      <input type="checkbox" name="openOnWeekdays" id="openOnWeekdays" checked={ isChecked } onChange={ handleCheckbox } />
+      <input type="checkbox" name="openOnWeekdays" id="openOnWeekdays" />
       <label htmlFor="openOnWeekend">¿Abre el fin de semana?</label>
-      <input type="checkbox" name="openOnWeekend" id="openOnWeekend" checked={ isChecked } onChange={ handleCheckbox } />
-      <input type="submit" value="Añadir un nuevo club" onClick={ handleClick } />
+      <input type="checkbox" name="openOnWeekend" id="openOnWeekend" />
+      <button onClick={ handleClick }>Añadir un nuevo club</button>
     </form>
-  );
+  )
 }
 
-export default FormNewClub;
+export default FormNewClub
