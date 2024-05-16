@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', Calibri, sans-serif;
+}
+
+.club_list {
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  font-size: 14px;
+}
+
+.card {
+  border: 2px solid lightseagreen;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.form {
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  & legend {
+    font-size: 24px;
+    padding-bottom: 5px;
+  }
+  
+}
