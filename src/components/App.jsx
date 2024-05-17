@@ -4,12 +4,14 @@ import { useState } from "react";
 import ClubsList from "./ClubsList";
 import FormNewClub from "./FormNewClub";
 import ClubFilter from "./ClubFilter";
+import FormSearch from "./FormSearch";
 
 function App () {
 	const [myClubs, setMyClubs] = useState(initialData)
 	const [newClub, setNewClub] = useState({ name: "", openOnWeekdays: false, openOnWeekend: false })
 	//en este caso sabemos que el valor inicial es desmarcado
 	const [filter, setFilter] = useState("all")
+	const [search, setSearch] = useState("")
 
 	const changeNewClub = (object) => {
 		//Lo que va a tener object => {key: "name", value: "nombre club"}
@@ -36,11 +38,18 @@ function App () {
 		// Para eliminar elementos hay que hacer uso del splice y modificar la variable de estado
 	})
 
+	const searchClubs = (valueSearch) => {
+		setSearch(valueSearch)
+	}
+
+	const searchArray = myClubs.filter((item) => item.name.toLowerCase().includes(search))
+
 
 	return (
 		<>
 			<ClubFilter setFilter={ setFilter } />
-			<ClubsList data={ filteredClubs } />
+			<FormSearch searchClubs={ searchClubs } />
+			<ClubsList data={ filteredClubs, searchArray } />
 			<FormNewClub changeNewClub={ changeNewClub } addNewClub={ addNewClub } />
 		</>
 	)
