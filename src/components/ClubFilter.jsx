@@ -6,9 +6,9 @@ function ClubFilter ({ setFilter }) {
 
 
   return (
-    <header>
-      <h1>Mis clubs</h1>
-      <select onChange={ (ev) => setFilter(ev.target.value) }>
+    <header className="header">
+      <h1 className="header_title">🪐 Mis clubs</h1>
+      <select onChange={ (ev) => setFilter(ev.target.value) } className="header_select">
         <option value="all">todos</option>
         <option value="weekdays">los que abren entre semana</option>
         <option value="weekend">los que abren el fin de semana</option>

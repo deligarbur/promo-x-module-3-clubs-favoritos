@@ -24,32 +24,32 @@ function App () {
 		setMyClubs([...myClubs, newClub])
 	};
 
-	const filteredClubs = myClubs.filter((club) => {
-		if (filter === "weekend") {
-			return club.openOnWeekend === true
-		} else if (filter === "weekdays") {
-			return club.openOnWeekdays === true
-		}
-		return true
+	const filteredClubs = () => {
+		return myClubs.filter((club) => {
+			if (filter === "weekend") {
+				return club.openOnWeekend === true
+			} else if (filter === "weekdays") {
+				return club.openOnWeekdays === true
+			}
+			return true
+		})
 
-		// Si tuviera un buscador, que buscase por nombre, podria incluir ese filtro también aquí y anidar filtros con:
-		// .filter((club) => club.name.includes(valor del input))
+			.filter((club) => club.name.toLowerCase().includes(search))
+
+		// Para que funcionen ambos filtros, es necesario hacerlos anidados como aquí
 
 		// Para eliminar elementos hay que hacer uso del splice y modificar la variable de estado
-	})
+	}
 
 	const searchClubs = (valueSearch) => {
 		setSearch(valueSearch)
 	}
 
-	const searchArray = myClubs.filter((item) => item.name.toLowerCase().includes(search))
-
-
 	return (
 		<>
 			<ClubFilter setFilter={ setFilter } />
 			<FormSearch searchClubs={ searchClubs } />
-			<ClubsList data={ filteredClubs, searchArray } />
+			<ClubsList clubs={ filteredClubs() } setMyClubs={ setMyClubs } />
 			<FormNewClub changeNewClub={ changeNewClub } addNewClub={ addNewClub } />
 		</>
 	)

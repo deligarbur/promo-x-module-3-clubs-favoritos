@@ -14,15 +14,22 @@ function FormNewClub ({ changeNewClub, addNewClub }) {
   }
 
   return (
-    <form className="form" onChange={ handleChange }>
-      <legend>Añadir un nuevo club</legend>
-      <label htmlFor="clubName">Nombre del club</label>
-      <input type="text" name="name" id="name" />
-      <label htmlFor="openOnWeekdays">¿Abre entre semana?</label>
-      <input type="checkbox" name="openOnWeekdays" id="openOnWeekdays" />
-      <label htmlFor="openOnWeekend">¿Abre el fin de semana?</label>
-      <input type="checkbox" name="openOnWeekend" id="openOnWeekend" />
-      <button onClick={ handleClick }>Añadir un nuevo club</button>
+    <form className="newclub" onChange={ handleChange }>
+      <legend className="newclub_title">Añadir un nuevo club</legend>
+      <div className="newclub_form">
+        <label className="newclub_form-nametitle" htmlFor="clubName">Nombre del club</label>
+        <input className="newclub_form-nameinput" type="text" name="name" id="name" />
+        <div className="newclub_form-checkbox">
+          <label htmlFor="openOnWeekdays">¿Abre entre semana?
+          </label>
+          <input className="checkbox_input" type="checkbox" name="openOnWeekdays" id="openOnWeekdays" />
+          <label htmlFor="openOnWeekend">¿Abre el fin de semana?
+          </label>
+          <input className="checkbox_input" type="checkbox" name="openOnWeekend" id="openOnWeekend" />
+        </div>
+        <button className="newclub_form-button" onClick={ handleClick }>Añadir un nuevo club</button>
+      </div>
+
     </form>
   )
 }

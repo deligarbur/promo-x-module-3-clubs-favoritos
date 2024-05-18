@@ -6,6 +6,7 @@
 }
 
 .club_list {
+  padding: 10px;
   display:flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -14,19 +15,101 @@
 }
 
 .card {
-  border: 2px solid lightseagreen;
+  width: 250px;
+  // background-color: #8ef2d6;
+  background-color: #ffebe7;
   border-radius: 10px;
   padding: 10px;
+  color: #fa9279;
+  box-shadow: 0 1px 6px #92c8c3;
+  &_button {
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #32a5a2;
+    background-color: #d0fffb;
+  }
+
 }
 
 .form {
+  width: 40%;
   padding: 10px;
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  & legend {
+  &_search {
     font-size: 24px;
     padding-bottom: 5px;
+    color: #f67978;
   }
-  
+  &_input{
+    border: 2px solid #90e3dc;
+    padding: 5px;
+    border-radius: 5px;
+  }
 }
+
+
+
+.header {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffece7;
+  &_select {
+    border: 2px solid #f67978;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    color: #32a5a2;
+  }
+  &_title {
+    color: #f67978;
+  }
+
+}
+
+.newclub {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  color: #32a5a2;
+  font-size: large;
+  &_form {
+    padding: 10px;
+    background-color: #c4eae6;
+    border:none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &-nametitle{
+
+    }
+    &-nameinput {
+      width: 40%;
+      padding: 5px;
+      border: 2px solid #32a5a2;
+      border-radius: 5px;
+    }
+    &-checkbox {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      padding-bottom: 10px;
+      
+    }
+    &-button {
+      padding: 5px;
+      border-radius: 5px;
+      border: 2px solid #f67978;
+      width: fit-content;
+      font-size: large;
+      color: #f67978; 
+    }
+  }
+}
+

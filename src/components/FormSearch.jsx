@@ -5,9 +5,9 @@ function FormSearch ({ searchClubs }) {
   }
 
   return (
-    <form>
-      <label htmlFor="search">Buscar</label>
-      <input type="text" name="search" id="search" onChange={ handleInput } />
+    <form className="form">
+      <label htmlFor="search" className="form_search">Buscar</label>
+      <input className="form_input" type="text" name="search" id="search" onChange={ handleInput } />
     </form>
   )
 }
