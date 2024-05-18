@@ -1,4 +1,4 @@
-function FormNewClub ({ changeNewClub, addNewClub }) {
+function FormNewClub ({ changeNewClub, addNewClub, newClub }) {
 
   const handleChange = (ev) => {
     // En lugar de usar el id, estamos aqui utilizando el atributo name con un operador ternario
@@ -20,16 +20,13 @@ function FormNewClub ({ changeNewClub, addNewClub }) {
         <label className="newclub_form-nametitle" htmlFor="clubName">Nombre del club</label>
         <input className="newclub_form-nameinput" type="text" name="name" id="name" />
         <div className="newclub_form-checkbox">
-          <label htmlFor="openOnWeekdays">¿Abre entre semana?
-          </label>
+          <label htmlFor="openOnWeekdays">¿Abre entre semana?</label>
           <input className="checkbox_input" type="checkbox" name="openOnWeekdays" id="openOnWeekdays" />
-          <label htmlFor="openOnWeekend">¿Abre el fin de semana?
-          </label>
+          <label htmlFor="openOnWeekend">¿Abre el fin de semana?</label>
           <input className="checkbox_input" type="checkbox" name="openOnWeekend" id="openOnWeekend" />
         </div>
         <button className="newclub_form-button" onClick={ handleClick }>Añadir un nuevo club</button>
       </div>
-
     </form>
   )
 }

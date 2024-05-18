@@ -38,7 +38,6 @@ function App () {
 
 		// Para que funcionen ambos filtros, es necesario hacerlos anidados como aquí
 
-		// Para eliminar elementos hay que hacer uso del splice y modificar la variable de estado
 	}
 
 	const searchClubs = (valueSearch) => {
@@ -50,7 +49,7 @@ function App () {
 			<ClubFilter setFilter={ setFilter } />
 			<FormSearch searchClubs={ searchClubs } />
 			<ClubsList clubs={ filteredClubs() } setMyClubs={ setMyClubs } />
-			<FormNewClub changeNewClub={ changeNewClub } addNewClub={ addNewClub } />
+			<FormNewClub changeNewClub={ changeNewClub } addNewClub={ addNewClub } newClub={ newClub } />
 		</>
 	)
 }

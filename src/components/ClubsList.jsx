@@ -6,8 +6,8 @@ function ClubsList ({ clubs, setMyClubs }) {
     const id = ev.target.id
     //este id ya es la posición del elemento en el array
     const cloneClubs = [...clubs]
+    // Para eliminar elementos hay que hacer uso del splice y modificar la variable de estado
     cloneClubs.splice(id, 1)
-    console.log(cloneClubs)
     setMyClubs(cloneClubs)
   }
 
