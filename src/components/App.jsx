@@ -8,10 +8,10 @@ import FormSearch from "./FormSearch";
 
 function App () {
 	const [myClubs, setMyClubs] = useState(initialData)
-	const [newClub, setNewClub] = useState({ name: "", openOnWeekdays: false, openOnWeekend: false })
-	//en este caso sabemos que el valor inicial es desmarcado
+	const [newClub, setNewClub] = useState({ name: "", openOnWeekdays: false, openOnWeekend: false }) //en este caso sabemos que el valor inicial es desmarcado
 	const [filter, setFilter] = useState("all")
 	const [search, setSearch] = useState("")
+	// const [dataForm, setDataForm] = useState({key: "", value: ""})
 
 	const changeNewClub = (object) => {
 		//Lo que va a tener object => {key: "name", value: "nombre club"}
@@ -33,11 +33,8 @@ function App () {
 			}
 			return true
 		})
-
 			.filter((club) => club.name.toLowerCase().includes(search))
-
 		// Para que funcionen ambos filtros, es necesario hacerlos anidados como aquí
-
 	}
 
 	const searchClubs = (valueSearch) => {
@@ -46,7 +43,7 @@ function App () {
 
 	return (
 		<>
-			<ClubFilter setFilter={ setFilter } />
+			<ClubFilter setFilter={ setFilter } filter={ filter } />
 			<FormSearch searchClubs={ searchClubs } />
 			<ClubsList clubs={ filteredClubs() } setMyClubs={ setMyClubs } />
 			<FormNewClub changeNewClub={ changeNewClub } addNewClub={ addNewClub } newClub={ newClub } />
