@@ -22,7 +22,7 @@ function App () {
 	//añado el nuevo club a la lista
 	const addNewClub = () => {
 		setMyClubs([...myClubs, newClub])
-	};
+	}
 
 	const filteredClubs = () => {
 		return myClubs.filter((club) => {
