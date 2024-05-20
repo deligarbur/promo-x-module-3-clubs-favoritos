@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 import initialData from "../services/data.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ClubsList from "./ClubsList";
 import FormNewClub from "./FormNewClub";
 import ClubFilter from "./ClubFilter";
@@ -40,6 +40,12 @@ function App () {
 	const searchClubs = (valueSearch) => {
 		setSearch(valueSearch)
 	}
+
+	//Guardo en el localstorage cada vez que myClubs se modifique
+	useEffect(() => {
+		localStorage.setItem("clubs", myClubs)
+	}, [myClubs])
+
 
 	return (
 		<>
