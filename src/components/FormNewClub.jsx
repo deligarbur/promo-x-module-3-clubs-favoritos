@@ -1,5 +1,4 @@
 function FormNewClub ({ changeNewClub, addNewClub, newClub }) {
-
   const handleChange = (ev) => {
     // En lugar de usar el id, estamos aqui utilizando el atributo name con un operador ternario
     const value = ev.target.name === "name" ? ev.target.value : ev.target.checked
