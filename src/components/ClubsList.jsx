@@ -1,7 +1,6 @@
 import Card from "./Card";
 
 function ClubsList ({ clubs, setMyClubs }) {
-
   const handleClick = (ev) => {
     const id = ev.target.id
     //este id ya es la posición del elemento en el array
