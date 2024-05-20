@@ -8,8 +8,8 @@ function FormNewClub ({ changeNewClub, addNewClub, newClub }) {
   }
 
   const handleClick = (ev) => {
-    ev.preventDefault()
-    addNewClub()
+    ev.preventDefault();
+    addNewClub();
   }
 
   return (
