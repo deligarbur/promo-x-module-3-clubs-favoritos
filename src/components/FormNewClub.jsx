@@ -1,7 +1,7 @@
 function FormNewClub ({ changeNewClub, addNewClub, newClub }) {
   const handleChange = (ev) => {
     // En lugar de usar el id, estamos aqui utilizando el atributo name con un operador ternario
-    const value = ev.target.name === "name" ? ev.target.value : ev.target.checked
+    const value = ev.target.name === "name" ? ev.target.value : ev.target.checked;
     // Aquí genero el objeto que contiene la información que quiero enviar a mi App
     const object = { key: ev.target.name, value: value };
     changeNewClub(object)
